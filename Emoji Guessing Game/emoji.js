@@ -36,6 +36,9 @@ const emojiDetails = [
       scoreElement.textContent = `Score: ${score}`;
       guessInput.value = "";
       guessInput.focus();     //after enter ing this will focus on textbox so to depict that enter value in textbox
+      /**What is the purpose of the focus() method?.
+        It moves the cursor to the input element.
+        Solution Description:Using the focus methods, the cursor will be placed inside the input field, allowing the user to start typing their guess without needing to click on the input field manually. */
       nextEmoji();
     }
   
