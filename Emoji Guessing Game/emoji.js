@@ -35,7 +35,7 @@ const emojiDetails = [
       console.log(score);
       scoreElement.textContent = `Score: ${score}`;
       guessInput.value = "";
-      guessInput.focus();
+      guessInput.focus();     //after enter ing this will focus on textbox so to depict that enter value in textbox
       nextEmoji();
     }
   
