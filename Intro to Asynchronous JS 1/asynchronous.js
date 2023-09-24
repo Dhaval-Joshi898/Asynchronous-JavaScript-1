@@ -8,7 +8,7 @@ btn.addEventListener('click',function(){
   
     
     setTimeout(function(){
-        console.log('after 5 sec')
+        console.log('after 6 sec')
     },6000)
     setTimeout(()=>{
         h3.textContent='';
