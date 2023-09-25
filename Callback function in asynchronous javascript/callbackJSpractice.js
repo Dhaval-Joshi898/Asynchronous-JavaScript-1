@@ -24,4 +24,5 @@ function message(){
 greetings()
 message()
 //based on above calling of function first it will print function message and then function greetings after 2 seconds
+//So output is---> WELCOME then after 2 seconds it will console hello
 
