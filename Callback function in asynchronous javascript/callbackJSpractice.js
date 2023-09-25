@@ -18,6 +18,10 @@ function greetings(){
 }
 
 function message(){
-    console.log('wELCOME')
+    console.log('WELCOME')
 }
+
+greetings()
+message()
+//based on above calling of function first it will print function message and then function greetings after 2 seconds
 
