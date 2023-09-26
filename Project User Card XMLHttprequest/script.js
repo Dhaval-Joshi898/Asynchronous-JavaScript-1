@@ -6,7 +6,8 @@ request.open('GET','https://dummyjson.com/users/1');
 
 request.send();
 
-const btn=document.querySelector('btn')
+const btn=document.querySelector('btn');
+const jsonDiv=document.getElementById('json')
 
 request.addEventListener('load',function(){
     console.log(request) //this will return an object
