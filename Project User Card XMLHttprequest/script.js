@@ -39,9 +39,5 @@ request.addEventListener('load', function () {
 
     divEle.innerHTML = card  //added the whole html card code inside the main div
 
-   
-
-
-
 })
 
