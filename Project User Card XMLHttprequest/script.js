@@ -7,9 +7,9 @@ request.open('GET','https://dummyjson.com/users/1');
 request.send();
 
 const btn=document.querySelector('btn');
-const jsonDiv=document.getElementById('json')
 
-request.addEventListener('load',function(){
+
+request.addEventListener('load',function(){  //whenever the data is loaded in the browser from this"https://dummyjson.com/users/1'"the below action to be performed.
     console.log(request) //this will return an object
     //to get the text from we can use .responseText a property inside the object
     console.log(request.responseText)
