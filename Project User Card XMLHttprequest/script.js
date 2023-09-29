@@ -2,7 +2,7 @@ const divEle=document.querySelector('.card-container');
 
 const request=new XMLHttpRequest();  // created request object of XMLHttpRequest
 
-request.open('GET','https://dummyjson.com/users/1');
+request.open('GET','https://dummyjson.com/users/1');  //initiated request using GET method with URl of the server
 
 request.send();
 
