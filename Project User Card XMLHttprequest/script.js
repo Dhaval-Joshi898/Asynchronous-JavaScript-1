@@ -77,4 +77,5 @@ getDetails(2);  //calling the function with different id
 //if i call the  function with another id as ARGUMENTS it will take that data and insert in the card  NOTE"there will be  no extra card added in the webpage
 //this is because everytime a function is called with different arguments of id the previous is replaced with new id data becuase of "divEle.innerHTML = card "
 getDetails(3); 
-// getDetails(4); 
+getDetails(4); 
+
