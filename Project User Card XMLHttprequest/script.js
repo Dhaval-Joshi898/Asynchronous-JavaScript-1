@@ -45,7 +45,7 @@ getDetails(2)
 
 //I can passed a paramter in carData as a position so that to call this cardDatafunction inside callback function with a "beforened" or "afterbegin" ARGUMENTS.
 
-function cardData(data){  //it takes data as paramter
+function cardData(data,position){  //it takes data and position(can be beforend or afterbegin)  as paramter
      //The below is the template literal the html code is written inside the template literal  so that we can use variable and change it dynamically for any other user object with idfferent id
      const card = `<div class="user-card">
      <img src=${data.image} alt="Profile Image" />
@@ -56,7 +56,9 @@ function cardData(data){  //it takes data as paramter
      </div>`
  
      // divEle.innerHTML = card  //added the whole html card code inside the main div
-     divEle.insertAdjacentHTML("beforeend",card)
+
+     divEle.insertAdjacentHTML(position,card)   
+     
      //afterbegin--> to add data at start
      //beforeend-->to add data at end 
 }
