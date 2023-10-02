@@ -17,8 +17,29 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 
         cardData(data) //here the argument is data in object
 
+        // Creating a reqest2 for  getting data form server for other card
+
+        const request2 = new XMLHttpRequest();  // created request object of XMLHttpRequest
+
+        request2.open('GET', `https://dummyjson.com/users/${id-1}`);  //initiated request using GET method with URl of the server
+        
+        request2.send(); //request send to the server
+
+        request2.addEventListener('load', function () { //Another callback function
+            console.log(typeof request2.responseText) 
+        
+            //to convert string to object we can use JSON.parse this will reurn an object,so that we can us eit for futher working by acessing object properties(like name ,id..)
+            data = JSON.parse(request2.responseText)  //converted to object
+            console.log(typeof (data))
+            console.log(data)
+            console.log(data.firstName)
+    
+            cardData(data)
+        })
+
     })
 }
+getDetails(2)
 
 function cardData(data){  //it takes data as paramter
      //The below is the template literal the html code is written inside the template literal  so that we can use variable and change it dynamically for any other user object with idfferent id
