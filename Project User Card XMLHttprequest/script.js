@@ -17,8 +17,10 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 
         cardData(data,"beforeend") //here the argument is data in object  and position .
 
-        // Creating a reqest2 for  getting data form server for other card
 
+
+
+        // Creating a reqest2 for  getting data form server for other card
         const request2 = new XMLHttpRequest();  // created request object of XMLHttpRequest
 
         request2.open('GET', `https://dummyjson.com/users/${id-1}`);  //initiated request using GET method with URl of the server
@@ -27,7 +29,7 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 
 
 
-        
+        //THe below callback function will run after the above function with id 2 is given and then this below function will run for {id-1}
         request2.addEventListener('load', function () { //Another callback function
             console.log(typeof request2.responseText) 
         
@@ -42,7 +44,7 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 
     })
 }
-getDetails(2)
+
 
 //Now i want that the id passed in parameter will come at "beforEnd" and {id-1} come "afterBegin"
 
@@ -66,6 +68,8 @@ function cardData(data,position){  //it takes data and position(can be beforend 
      //beforEend-->to add data at end 
 }
 
+//Calling the main function
+getDetails(2)
 
 
 
