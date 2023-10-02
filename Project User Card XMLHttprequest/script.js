@@ -41,6 +41,10 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 }
 getDetails(2)
 
+//Now i want that the id passed in parameter will come at "beforened" and {id-1} come "afterbegin"
+
+//I can passed a paramter in carData as a position so that to call this cardDatafunction inside callback function with a "beforened" or "afterbegin" ARGUMENTS.
+
 function cardData(data){  //it takes data as paramter
      //The below is the template literal the html code is written inside the template literal  so that we can use variable and change it dynamically for any other user object with idfferent id
      const card = `<div class="user-card">
