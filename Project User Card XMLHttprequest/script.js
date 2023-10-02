@@ -41,6 +41,26 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
     
             cardData(data,'afterbegin')
         })
+        const request3 = new XMLHttpRequest();  // created request object of XMLHttpRequest
+
+        request3.open('GET', `https://dummyjson.com/users/${id+1}`);  //initiated request using GET method with URl of the server
+        
+        request3.send(); //request send to the server
+
+
+
+        //THe below callback function will run after the above function with id 2 is given and then this below function will run for {id-1}
+        request3.addEventListener('load', function () { //Another callback function
+            console.log(typeof request2.responseText) 
+        
+            //to convert string to object we can use JSON.parse this will reurn an object,so that we can us eit for futher working by acessing object properties(like name ,id..)
+            data = JSON.parse(request3.responseText)  //converted to object
+            console.log(typeof (data))
+            console.log(data)
+            console.log(data.firstName)
+    
+            cardData(data,'beforeend')
+        })
 
     })
 }
