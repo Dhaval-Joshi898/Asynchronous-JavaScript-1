@@ -61,7 +61,7 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
     
             cardData(data,'beforeend',"other")
         })
-
+ 
     })
 }
 
