@@ -15,7 +15,25 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
         console.log(data)
         console.log(data.firstName)
 
+        // cardData(data) //here the argument is data in object
+
     })
+}
+
+function cardData(data){  //it takes data as paramter
+     //The below is the template literal the html code is written inside the template literal  so that we can use variable and change it dynamically for any other user object with idfferent id
+     const card = `<div class="user-card">
+     <img src=${data.image} alt="Profile Image" />
+     <h3>${data.firstName} </h3>
+     <h3>${data.lastName}</h3>
+     <p class="email">${data.email}</p>
+     <button class="btn">View Profile</button>
+     </div>`
+ 
+     // divEle.innerHTML = card  //added the whole html card code inside the main div
+     divEle.insertAdjacentHTML("beforeend",card)
+     //afterbegin--> to add data at start
+     //beforeend-->to add data at end 
 }
 
 
