@@ -1,19 +1,22 @@
 const divEle = document.querySelector('.card-container');
 function getDetails(id){  //here in parameter i will pass id So that in the link it will dynaiclaly tak ethe link of parmater in id
     const request = new XMLHttpRequest();  // created request object of XMLHttpRequest
+    console.log(request)
 
     request.open('GET', `https://dummyjson.com/users/${id}`);  //initiated request using GET method with URl of the server
     
     request.send(); //request send to the server
     
     request.addEventListener('load', function () {
-        console.log(typeof request.responseText) //this will give string by defalut REASONS mentioned above in line no 16
-    
+    //    console.log(typeof request.responseText) //this will give string by defalut REASONS mentioned above in line no 16
+        
         //to convert string to object we can use JSON.parse this will reurn an object,so that we can us eit for futher working by acessing object properties(like name ,id..)
         data = JSON.parse(request.responseText)  //converted to object
-        console.log(typeof (data))
-        console.log(data)
-        console.log(data.firstName)
+
+        // console.log(typeof (data))
+        // console.log(data)
+        // console.log(data.firstName)
+
 
         cardData(data,"beforeend") //here the argument is data in object  and position .
 
@@ -22,22 +25,24 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 
         // Creating a reqest2 for  getting data form server for other card
         const request2 = new XMLHttpRequest();  // created request object of XMLHttpRequest
-
+        
         request2.open('GET', `https://dummyjson.com/users/${id-1}`);  //initiated request using GET method with URl of the server
         
         request2.send(); //request send to the server
 
 
 
-        //THe below callback function will run after the above function with id 2 is given and then this below function will run for {id-1}
+        //The below callback function will run after the above function with id 2 is given and then this below function will run for {id-1}
+
         request2.addEventListener('load', function () { //Another callback function
-            console.log(typeof request2.responseText) 
+          //  console.log(typeof request2.responseText) 
         
             //to convert string to object we can use JSON.parse this will reurn an object,so that we can us eit for futher working by acessing object properties(like name ,id..)
             data = JSON.parse(request2.responseText)  //converted to object
-            console.log(typeof (data))
-            console.log(data)
-            console.log(data.firstName)
+
+         //   console.log(typeof (data))
+         //   console.log(data)
+         //   console.log(data.firstName)
     
             cardData(data,'afterbegin',"other")
         })
@@ -51,13 +56,14 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 
         //THe below callback function will run after the above function with id 2 is given and then this below function will run for {id-1}
         request3.addEventListener('load', function () { //Another callback function
-            console.log(typeof request2.responseText) 
+          //  console.log(typeof request2.responseText) 
         
             //to convert string to object we can use JSON.parse this will reurn an object,so that we can us eit for futher working by acessing object properties(like name ,id..)
             data = JSON.parse(request3.responseText)  //converted to object
-            console.log(typeof (data))
-            console.log(data)
-            console.log(data.firstName)
+            
+        //    console.log(typeof (data))
+        //    console.log(data)
+        //    console.log(data.firstName)
     
             cardData(data,'beforeend',"other")
         })
@@ -89,7 +95,7 @@ function cardData(data,position,className=''){  //it takes data and position(can
 }
 
 //Calling the main function
-getDetails(2)
+getDetails(1)
 
 
 
