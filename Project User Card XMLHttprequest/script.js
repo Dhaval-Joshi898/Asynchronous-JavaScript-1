@@ -1,4 +1,59 @@
 const divEle = document.querySelector('.card-container');
+function getDetails(id){  //here in parameter i will pass id So that in the link it will dynaiclaly tak ethe link of parmater in id
+    const request = new XMLHttpRequest();  // created request object of XMLHttpRequest
+
+    request.open('GET', `https://dummyjson.com/users/${id}`);  //initiated request using GET method with URl of the server
+    
+    request.send(); //request send to the server
+    
+    request.addEventListener('load', function () {
+        console.log(typeof request.responseText) //this will give string by defalut REASONS mentioned above in line no 16
+    
+        //to convert string to object we can use JSON.parse this will reurn an object,so that we can us eit for futher working by acessing object properties(like name ,id..)
+        data = JSON.parse(request.responseText)  //converted to object
+        console.log(typeof (data))
+        console.log(data)
+        console.log(data.firstName)
+
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const request = new XMLHttpRequest();  // created request object of XMLHttpRequest
 
