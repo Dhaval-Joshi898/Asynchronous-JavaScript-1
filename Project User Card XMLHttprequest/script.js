@@ -15,7 +15,7 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
         console.log(data)
         console.log(data.firstName)
 
-        cardData(data) //here the argument is data in object
+        cardData(data,"beforeend") //here the argument is data in object  and position .
 
         // Creating a reqest2 for  getting data form server for other card
 
@@ -25,6 +25,9 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
         
         request2.send(); //request send to the server
 
+
+
+        
         request2.addEventListener('load', function () { //Another callback function
             console.log(typeof request2.responseText) 
         
@@ -34,14 +37,14 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
             console.log(data)
             console.log(data.firstName)
     
-            cardData(data)
+            cardData(data,'afterbegin')
         })
 
     })
 }
 getDetails(2)
 
-//Now i want that the id passed in parameter will come at "beforened" and {id-1} come "afterbegin"
+//Now i want that the id passed in parameter will come at "beforEnd" and {id-1} come "afterBegin"
 
 //I can passed a paramter in carData as a position so that to call this cardDatafunction inside callback function with a "beforened" or "afterbegin" ARGUMENTS.
 
@@ -58,9 +61,9 @@ function cardData(data,position){  //it takes data and position(can be beforend 
      // divEle.innerHTML = card  //added the whole html card code inside the main div
 
      divEle.insertAdjacentHTML(position,card)   
-     
-     //afterbegin--> to add data at start
-     //beforeend-->to add data at end 
+
+     //afterBegin--> to add data at start
+     //beforEend-->to add data at end 
 }
 
 
