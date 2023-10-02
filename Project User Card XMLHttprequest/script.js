@@ -39,7 +39,7 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
             console.log(data)
             console.log(data.firstName)
     
-            cardData(data,'afterbegin')
+            cardData(data,'afterbegin',"other")
         })
         const request3 = new XMLHttpRequest();  // created request object of XMLHttpRequest
 
@@ -59,7 +59,7 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
             console.log(data)
             console.log(data.firstName)
     
-            cardData(data,'beforeend')
+            cardData(data,'beforeend',"other")
         })
 
     })
@@ -70,9 +70,9 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 
 //I can passed a paramter in carData as a position so that to call this cardDatafunction inside callback function with a "beforened" or "afterbegin" ARGUMENTS.
 
-function cardData(data,position){  //it takes data and position(can be beforend or afterbegin)  as paramter
+function cardData(data,position,className=''){  //it takes data and position(can be beforend or afterbegin)  as paramter
      //The below is the template literal the html code is written inside the template literal  so that we can use variable and change it dynamically for any other user object with idfferent id
-     const card = `<div class="user-card">
+     const card = `<div class="user-card ${className}">
      <img src=${data.image} alt="Profile Image" />
      <h3>${data.firstName} </h3>
      <h3>${data.lastName}</h3>
