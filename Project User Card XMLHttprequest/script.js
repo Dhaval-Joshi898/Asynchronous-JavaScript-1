@@ -97,6 +97,7 @@ function cardData(data,position,className=''){  //it takes data and position(can
 //Calling the main function
 getDetails(1)
 //what if request passed and it does not exit in the server?
+//for example for id =0 there will be 404 error 
 
 
 
