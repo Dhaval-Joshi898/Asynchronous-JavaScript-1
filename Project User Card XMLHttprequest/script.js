@@ -42,6 +42,12 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
             
             return ;
           }
+          `In this code, request2.status is a property that holds the HTTP status code of the response received from the server. HTTP status codes indicate the result of the HTTP request. The HTTP status code 404 specifically indicates "Not Found." It means that the requested resource (in this case, the user data with the specified ID) does not exist on the server.
+
+          So, when request2.status is checked for equality with 404, it means that the server has responded with a "Not Found" status for the requested resource. In this context, the code inside the if block is executed.
+          
+          What the code does inside the if block is simply to return;. This return; statement effectively exits the callback function early, preventing the rest of the code within that callback function from executing.`
+
         
             //to convert string to object we can use JSON.parse this will reurn an object,so that we can us eit for futher working by acessing object properties(like name ,id..)
             data = JSON.parse(request2.responseText)  //converted to object
