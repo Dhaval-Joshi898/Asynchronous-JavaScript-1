@@ -36,6 +36,11 @@ function getDetails(id){  //here in parameter i will pass id So that in the link
 
         request2.addEventListener('load', function () { //Another callback function
           //  console.log(typeof request2.responseText) 
+          //the below code will check the status(propery) of object  and f there is no data it will not  give any value the card will not display
+          
+          if (request2.status===404){
+            return
+          }
         
             //to convert string to object we can use JSON.parse this will reurn an object,so that we can us eit for futher working by acessing object properties(like name ,id..)
             data = JSON.parse(request2.responseText)  //converted to object
